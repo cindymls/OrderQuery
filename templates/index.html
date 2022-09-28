@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Check Order Status {% endblock %}</h1>
+    <form method="post">
+        <label for="orderid">Order Number</label>
+        <br>
+        <input type="text" name="orderid"
+               placeholder="Order Id"
+               value="{{ request.form['orderid'] }}"></input>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

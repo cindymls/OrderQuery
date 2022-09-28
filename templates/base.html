@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - Book Order</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+Pro&display=swap');
+      body {
+          color: #333333;
+          font: 16px/1 'Source Sans Pro', arial, sans-serif;
+      }
+      h3 {
+        font-family: 'Montserrat';
+        font-weight: normal;
+        margin: 0 auto 1em;
+        font-size: 1.25em;
+        letter-spacing: -0.025em;
+      }
+      .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+      button {
+        float: none !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        background-image: none !important;
+        line-height: 1 !important;
+        font-family: "Montserrat";
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: -.02em;
+        display: inline-block;
+        padding: 0.85em 1.5em 0.75em !important;
+      }
+      label {
+        display: block;
+        font-size: 1em !important;
+        padding: 0 0 10px !important;
+      }
+      input {
+        color: inherit;
+        background: #f0f0f0;
+        border: solid 1px #f0f0f0;
+        border-radius: 0;
+        padding: 8px !important;
+        min-height: 42px !important;
+        box-sizing:border-box;
+        transition: all 200ms linear;
+      }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Book Order Query</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

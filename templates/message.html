@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Order Status {% endblock %}</h1>
+    {% for message in messages %}
+        <div class='message'>
+            <h3>Order Number: {{ message['Order Number'] }}</h3>
+            <p>Order Status: {{ message['Order Status']}}</p>
+            <p>Tracking ID: <a href="{{ message['Tracking URL'] }}" target="_blank" rel="noopener noreferrer">{{ message['Tracking ID']}}</a></p>
+        </div>
+    {% endfor %}
+{% endblock %}
